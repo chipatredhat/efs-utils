@@ -1,0 +1,4 @@
+FROM registry.access.redhat.com/ubi9/ubi:latest
+RUN dnf -y install git rpm-build make rust cargo openssl-devel
+RUN git clone https://github.com/aws/efs-utils
+COPY build_efs.sh /root/build_efs.sh
